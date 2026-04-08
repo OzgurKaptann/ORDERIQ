@@ -1,0 +1,51 @@
+# API Contract V1
+
+## Auth
+POST /auth/register
+POST /auth/login
+GET /auth/me
+
+## Onboarding
+POST /onboarding/setup
+POST /onboarding/apply-template
+
+## Categories
+GET /categories
+POST /categories
+PATCH /categories/{id}
+DELETE /categories/{id}
+
+## Products
+GET /products
+POST /products
+PATCH /products/{id}
+DELETE /products/{id}
+
+## Modifier Groups
+GET /modifier-groups
+POST /modifier-groups
+PATCH /modifier-groups/{id}
+DELETE /modifier-groups/{id}
+
+## Public Menu
+GET /public/menu/{slug}
+
+## Orders
+POST /public/orders
+GET /orders
+PATCH /orders/{id}/status
+
+## QR
+POST /qr/generate
+GET /qr
+
+## Analytics
+GET /analytics/summary
+GET /analytics/top-products
+GET /analytics/hourly-orders
+
+## Rules
+
+- Public endpoints require no auth
+- Admin endpoints require auth
+- Tenant isolation must be enforced

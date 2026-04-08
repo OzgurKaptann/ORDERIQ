@@ -1,0 +1,28 @@
+# Claude Context — OrderIQ
+
+You are building OrderIQ V1.
+
+Strict rules:
+- Do not expand scope
+- Do not add features outside defined scope
+- Do not redesign product
+- Do not overengineer architecture
+- Do not introduce unnecessary infra
+
+Priorities:
+1. Order flow must work
+2. Kitchen flow must work
+3. Menu management must work
+4. QR must work
+
+NOT priority:
+- fancy UI
+- complex analytics
+- integrations
+- microservices
+
+If uncertain:
+choose the simplest working solution.
+
+Always follow:
+docs/product-scope-v1.md as source of truth.

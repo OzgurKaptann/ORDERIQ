@@ -1,0 +1,37 @@
+# UI Flows V1
+
+## Merchant Flow
+
+Register → Onboarding → Dashboard
+
+Dashboard →
+- Manage categories
+- Manage products
+- Manage modifiers
+- Generate QR
+- View orders (kitchen)
+- View analytics
+
+## Customer Flow
+
+QR Scan →
+Menu →
+Product selection →
+Modifiers →
+Cart →
+Checkout →
+Success
+
+## Kitchen Flow
+
+Kitchen screen →
+List of orders →
+Update status
+
+## UI Principles
+
+- Fast
+- Simple
+- Mobile-friendly for customers
+- Minimal friction
+- No overdesign

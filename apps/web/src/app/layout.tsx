@@ -1,0 +1,12 @@
+export const metadata = {
+  title: "OrderIQ",
+  description: "Fast-service food ordering platform",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="tr">
+      <body>{children}</body>
+    </html>
+  );
+}

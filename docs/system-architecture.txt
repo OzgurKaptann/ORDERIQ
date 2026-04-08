@@ -1,0 +1,55 @@
+# System Architecture V1
+
+## Architecture Overview
+
+Monolithic backend + single frontend.
+
+- Backend: FastAPI REST API
+- Frontend: Next.js (admin + public menu)
+- DB: PostgreSQL
+
+## Multi-Tenant Design
+
+Every core table includes:
+- tenant_id
+- branch_id (future-proof)
+
+## Modules
+
+- Auth & Tenant
+- Onboarding
+- Menu (categories, products, modifiers)
+- Ordering
+- Kitchen
+- QR
+- Analytics (basic)
+- Event Logging
+
+## Public Menu Flow
+
+Customer → /m/{slug}
+→ fetch menu
+→ build cart
+→ place order
+
+## Order Lifecycle
+
+pending → preparing → ready → delivered
+pending/preparing → cancelled
+
+## Real-time Strategy
+
+Use polling for V1.
+No websocket complexity unless trivial.
+
+## Analytics Strategy
+
+- Use operational DB
+- Basic aggregate queries
+- No separate data warehouse in V1
+
+## Future Ready
+
+- event logging enabled
+- tag system for products
+- branch-aware schema

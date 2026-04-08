@@ -1,0 +1,49 @@
+# OrderIQ V1 Product Scope
+
+## Target Users
+- Waffle shops
+- Kumpir shops
+- Midye shops
+- Small fast-service food businesses
+
+## Core Value
+Merchant can quickly go live with QR menu and receive orders.
+
+## First Value Moment
+Customer scans QR → places order → order appears in kitchen screen.
+
+## In Scope
+- Register / login
+- Tenant creation
+- Onboarding wizard
+- Template-based menu setup
+- Category / product / modifier management
+- Public menu
+- Cart & checkout (guest)
+- Order creation
+- Kitchen screen
+- Order status updates
+- QR generation
+- Basic analytics
+
+## Out of Scope
+- Payments
+- POS / ERP integration
+- Customer accounts
+- Campaigns
+- Inventory system
+- Custom dashboards
+- AI features
+- Multi-branch management UI
+- Location analytics
+
+## User Roles
+- Merchant Admin
+- Kitchen Staff
+- Customer
+
+## Success Criteria
+- Merchant creates menu in < 15 minutes
+- QR is generated
+- Real order is received
+- Kitchen flow works

@@ -1,0 +1,38 @@
+# Data Model V1
+
+## Core Entities
+
+- tenants
+- users
+- branches
+- categories
+- products
+- product_tags
+- modifier_groups
+- modifier_options
+- product_modifier_groups
+- orders
+- order_items
+- order_item_modifiers
+- qr_codes
+- business_settings
+- event_logs
+
+## Key Rules
+
+- All business tables include tenant_id
+- Operational tables include branch_id
+- Orders snapshot product data (name, price)
+
+## Relationships
+
+- tenant → branches
+- branch → categories/products
+- product → modifier_groups
+- order → order_items
+- order_item → modifiers
+
+## Notes
+
+- product_tags required for future analytics
+- branch exists even if single-branch UI
