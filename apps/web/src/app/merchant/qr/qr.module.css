@@ -1,0 +1,299 @@
+/* ── Page shell ─────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top bar ────────────────────────────────────────── */
+
+.topBar {
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.topBarTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.navLink {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #ccc;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.navLink:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ── Main ───────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  padding: 20px 16px;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Section ────────────────────────────────────────── */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e5e7eb;
+  color: #555;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ── Generate form panel ────────────────────────────── */
+
+.formPanel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.typeRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.typeBtn {
+  padding: 8px 18px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  background: #fff;
+  color: #555;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.typeBtn:hover {
+  border-color: #aaa;
+  color: #111;
+}
+
+.typeSelected {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 240px;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.required {
+  color: #dc2626;
+}
+
+.input {
+  padding: 8px 10px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #111;
+}
+
+.generateBtn {
+  padding: 9px 24px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.generateBtn:hover:not(:disabled) {
+  background: #333;
+}
+
+.generateBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Error banner ────────────────────────────────────── */
+
+.errorBanner {
+  background: #fff2f2;
+  border: 1px solid #fca5a5;
+  color: #c0392b;
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* ── Loading / empty ─────────────────────────────────── */
+
+.message {
+  text-align: center;
+  padding: 36px 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ── QR code list ────────────────────────────────────── */
+
+.qrList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qrCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.qrImage {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+
+.qrInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.qrMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.badgeGeneric {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.badgeTable {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.tableName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.targetUrl {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.createdAt {
+  font-size: 0.775rem;
+  color: #999;
+  margin: 0;
+}
+
+.downloadLink {
+  display: inline-block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  padding: 5px 12px;
+  align-self: flex-start;
+}
+
+.downloadLink:hover {
+  border-color: #aaa;
+  background: #f9f9f9;
+}

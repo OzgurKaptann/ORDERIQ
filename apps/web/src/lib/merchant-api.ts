@@ -206,3 +206,87 @@ export async function deleteModifierGroup(id: string): Promise<void> {
   if (!res.ok && res.status !== 204)
     throw new Error(`Failed to delete modifier group: ${res.status}`);
 }
+
+// ---------------------------------------------------------------------------
+// QR Code types
+// ---------------------------------------------------------------------------
+
+export type QRCode = {
+  id: string;
+  code_type: "generic" | "table";
+  table_number: string | null;
+  target_url: string;
+  image_url: string;
+  created_at: string;
+};
+
+export type QRGeneratePayload = {
+  code_type: "generic" | "table";
+  table_number?: string;
+};
+
+// ---------------------------------------------------------------------------
+// QR Code API
+// ---------------------------------------------------------------------------
+
+export async function fetchQRCodes(): Promise<QRCode[]> {
+  const res = await authFetch("/qr");
+  if (!res.ok) throw new Error(`QR fetch failed: ${res.status}`);
+  return res.json() as Promise<QRCode[]>;
+}
+
+export async function generateQRCode(data: QRGeneratePayload): Promise<QRCode> {
+  const res = await authFetch("/qr/generate", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error(`QR generate failed: ${res.status}`);
+  return res.json() as Promise<QRCode>;
+}
+
+// ---------------------------------------------------------------------------
+// Analytics types
+// ---------------------------------------------------------------------------
+
+export type AnalyticsSummary = {
+  today_order_count: number;
+  today_revenue: number;
+  average_basket_value: number;
+  // backend does not return currency; omitted intentionally
+};
+
+export type TopProduct = {
+  product_name: string;
+  total_quantity: number; // backend field name; was incorrectly typed as order_count
+};
+
+export type HourlyOrder = {
+  hour: number;        // 0-23
+  order_count: number;
+};
+
+// ---------------------------------------------------------------------------
+// Analytics API
+// ---------------------------------------------------------------------------
+
+export async function fetchAnalyticsSummary(): Promise<AnalyticsSummary> {
+  const res = await authFetch("/analytics/summary");
+  if (!res.ok) throw new Error(`Analytics summary failed: ${res.status}`);
+  return res.json() as Promise<AnalyticsSummary>;
+}
+
+export async function fetchTopProducts(): Promise<TopProduct[]> {
+  const res = await authFetch("/analytics/top-products");
+  if (!res.ok) throw new Error(`Top products failed: ${res.status}`);
+  // Backend wraps the list: { products: [...] }
+  const data = await res.json() as { products?: TopProduct[] };
+  return Array.isArray(data.products) ? data.products : [];
+}
+
+export async function fetchHourlyOrders(): Promise<HourlyOrder[]> {
+  const res = await authFetch("/analytics/hourly-orders");
+  if (!res.ok) throw new Error(`Hourly orders failed: ${res.status}`);
+  // Backend wraps the list: { distribution: [...] }
+  const data = await res.json() as { distribution?: HourlyOrder[] };
+  return Array.isArray(data.distribution) ? data.distribution : [];
+}

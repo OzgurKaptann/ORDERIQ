@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
@@ -30,6 +30,17 @@ export function CheckoutView({ slug, currency, serviceMode, businessName }: Prop
   const [customerNote, setCustomerNote] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Reset all form state on every mount — prevents stale state from the
+  // Next.js router cache when the user starts a second order after a
+  // successful submission (which leaves submitting=true in the cache).
+  useEffect(() => {
+    setOrderType(defaultType as "dine_in" | "pickup");
+    setTableNumber("");
+    setCustomerNote("");
+    setSubmitting(false);
+    setError(null);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const total = cart.reduce((sum, i) => sum + i.lineTotal, 0);
 
