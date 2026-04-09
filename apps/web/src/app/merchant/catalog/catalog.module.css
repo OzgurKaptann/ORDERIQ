@@ -1,0 +1,439 @@
+/* ── Shell ───────────────────────────────────────────── */
+
+.shell {
+  min-height: 100vh;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top nav ─────────────────────────────────────────── */
+
+.topNav {
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.backLink {
+  color: #aaa;
+  font-size: 0.85rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.backLink:hover {
+  color: #fff;
+}
+
+.navTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.tab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #bbb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.tab:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.tabActive {
+  background: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+/* ── Page body ───────────────────────────────────────── */
+
+.body {
+  flex: 1;
+  padding: 16px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Section header ──────────────────────────────────── */
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── Add / primary button ────────────────────────────── */
+
+.addBtn {
+  padding: 8px 18px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.addBtn:hover {
+  background: #333;
+}
+
+/* ── Inline form panel ───────────────────────────────── */
+
+.formPanel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2px;
+}
+
+.formRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.input,
+.select,
+.textarea {
+  padding: 8px 10px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  outline: none;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #111;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.saveBtn {
+  padding: 8px 20px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #333;
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancelBtn {
+  padding: 8px 16px;
+  background: #fff;
+  color: #555;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.cancelBtn:hover {
+  border-color: #aaa;
+  color: #111;
+}
+
+/* ── Error banner ────────────────────────────────────── */
+
+.errorBanner {
+  background: #fff2f2;
+  border: 1px solid #fca5a5;
+  color: #c0392b;
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+}
+
+/* ── List ────────────────────────────────────────────── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rowInactive {
+  opacity: 0.5;
+}
+
+.rowName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+  flex: 1;
+  min-width: 120px;
+}
+
+.rowMeta {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.rowActions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* ── Row action buttons ──────────────────────────────── */
+
+.editBtn,
+.toggleBtn,
+.deleteBtn {
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.editBtn {
+  background: #fff;
+  color: #111;
+  border: 1.5px solid #ddd;
+}
+
+.editBtn:hover {
+  border-color: #aaa;
+}
+
+.toggleBtn {
+  background: #fff;
+  color: #555;
+  border: 1.5px solid #ddd;
+}
+
+.toggleBtn:hover {
+  border-color: #aaa;
+  color: #111;
+}
+
+.deleteBtn {
+  background: #fff;
+  color: #dc2626;
+  border: 1.5px solid #fca5a5;
+}
+
+.deleteBtn:hover {
+  background: #fff2f2;
+}
+
+/* ── Badge ───────────────────────────────────────────── */
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.badgeActive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badgeInactive {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ── Loading / empty ─────────────────────────────────── */
+
+.message {
+  text-align: center;
+  padding: 48px 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ── Checkbox group (modifier group IDs) ─────────────── */
+
+.checkGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.825rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ── Option sub-rows (modifier options) ──────────────── */
+
+.optionList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optionRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.optionInput {
+  padding: 7px 10px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  outline: none;
+  flex: 1;
+  min-width: 100px;
+}
+
+.optionInput:focus {
+  border-color: #111;
+}
+
+.removeOptionBtn {
+  padding: 5px 10px;
+  background: #fff;
+  color: #dc2626;
+  border: 1.5px solid #fca5a5;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.removeOptionBtn:hover {
+  background: #fff2f2;
+}
+
+.addOptionBtn {
+  padding: 6px 14px;
+  background: #fff;
+  color: #555;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.addOptionBtn:hover {
+  border-color: #aaa;
+  color: #111;
+}
+
+/* ── Filter bar ──────────────────────────────────────── */
+
+.filterBar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #555;
+}

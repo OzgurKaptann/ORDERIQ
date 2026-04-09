@@ -1,3 +1,5 @@
+import "./globals.css";
+
 export const metadata = {
   title: "OrderIQ",
   description: "Fast-service food ordering platform",
